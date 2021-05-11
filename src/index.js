@@ -21,23 +21,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   })
 });
-  const inputValue = document.getElementById("new-task-description");
-  const output = document.getElementById("tasks");
-  let listItems = [];
-  document.getElementById("submitButton").addEventListener("click", addItem){
-    function appendListItem (inputValue) {
-      let listItem = document.createElement("li");
-      listItem.textContent = inputValue;
-      listItems.appendChild(listItem);  
-    };
-
-    function addItem () {
-      const inputEl = inputValue;
-      const val = inputEl.value.trim();
-      listItems.push(val);
-      appendListItem(output, val);
-      inputEl.value = "";
-    };
-  }
-  
-});
