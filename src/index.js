@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // your code here
-  const form = document.querySelector('form');
+  document.getElementById("submitButtom").addEventListener("click", function(event) {
+    event.preventDefault();
+  });
+    const form = document.querySelector('form');
 
   form.addEventListener('submit', function(event){
     event.preventDefault();
@@ -17,4 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
     inputTag.value = '';
 
   })
+});
+  const inputValue = document.getElementById("new-task-description");
+  const output = document.getElementById("tasks");
+  let listItems = [];
+  document.getElementById("submitButton").addEventListener("click", addItem){
+    function appendListItem (inputValue) {
+      let listItem = document.createElement("li");
+      listItem.textContent = inputValue;
+      listItems.appendChild(listItem);  
+    };
+
+    function addItem () {
+      const inputEl = inputValue;
+      const val = inputEl.value.trim();
+      listItems.push(val);
+      appendListItem(output, val);
+      inputEl.value = "";
+    };
+  }
+  
 });
